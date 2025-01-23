@@ -12,7 +12,6 @@ body {
   text-align: center; /* Centraliza o conteúdo */
 }
 
-/* Container principal */
 .App {
   width: 100%;
   max-width: 400px;
@@ -27,76 +26,10 @@ body {
   align-items: center;
 }
 
-/* Títulos */
-h2 {
-  font-size: 1.8rem;
-  color: #222; /* Cor mais escura para contraste */
-  margin-bottom: 1.5rem;
-}
-
-/* Inputs de texto */
-input {
-  width: 90%; /* Largura total do container */
-  max-width: 350px; /* Tamanho máximo */
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 1rem;
-  background: #f9f9f9;
-  color: #333; /* Cor da fonte */
-  text-align: left; /* Alinha o texto à esquerda */
-  transition: border-color 0.3s ease, background 0.3s ease;
-}
-
-input:focus {
-  border-color: #4a90e2;
-  background: #fff;
-  outline: none;
-  color: #222; /* Ajuste da cor ao focar */
-}
-
-/* Botão */
-button {
-  background-color: #4a90e2;
-  color: white;
-  border: none;
-  padding: 12px 16px;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 100%; /* Preencher largura do container */
-  max-width: 350px; /* Igual ao input */
-  margin-top: 1rem;
-}
-
-button:hover {
-  background-color: #357abd;
-}
-
-/* Mensagem de erro */
-.error {
-  color: #e74c3c;
-  font-size: 0.9rem;
-  margin-top: 10px;
-}
-
 /* Responsividade */
 @media (max-width: 768px) {
   .App {
     max-width: 90%; /* Reduz largura em telas menores */
     padding: 1.5rem;
-  }
-
-  input {
-    padding: 10px;
-    font-size: 0.9rem;
-  }
-
-  button {
-    padding: 10px;
-    font-size: 0.9rem;
   }
 }
