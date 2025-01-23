@@ -36,7 +36,7 @@ function Home({ onLogout }) {
 
   return (
     <div className="main-container">
-      <h2>Bem-vindo AWENAIFE!</h2>
+      <h2>Bem-vindo à AWENAIFE!</h2>
       <button
         onClick={() => setShowChat(true)}
         style={{
