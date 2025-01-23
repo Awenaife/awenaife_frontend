@@ -12,7 +12,6 @@ function Login({ onLogin }) {
   const [confirmationCode, setConfirmationCode] = useState('');
   const [isConfirming, setIsConfirming] = useState(false);
   const [isResetPassword, setIsResetPassword] = useState(false);
-  const [isConfirmingReset, setIsConfirmingReset] = useState(false);
   const [newPassword, setNewPassword] = useState('');
 
   const handleLogin = async (e) => {
@@ -147,7 +146,6 @@ function Login({ onLogin }) {
               ? 'Trocar Senha'
               : 'Entrar'}
         </button>
-        {error && <p className="error-message">{error}</p>}
       </form>
       {!isResetPassword && (
         <button onClick={() => setIsSignUp(!isSignUp)}>
@@ -167,6 +165,7 @@ function Login({ onLogin }) {
         Esqueceu sua senha?
         </button>
       )}
+      {error && <p className="error-message">{error}</p>}
     </div>
   );
 }
