@@ -1,18 +1,22 @@
 import PropTypes from "prop-types";
 import { useState } from 'react';
+import { signIn } from 'aws-amplify/auth';
 import './App.css';
+import './amplifyConfig';
 
 function Login({ onLogin }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Lógica de autenticação fictícia
-    if (email === 'user@example.com' && password === 'password') {
+    try {
+      await signIn({username: email, password: password});
       onLogin();
-    } else {
-      alert('Credenciais inválidas!');
+    } catch (err) {
+      console.log('Erro ao sair:', err.message);
+      setError('Credenciais inválidas! Verifique e tente novamente.');
     }
   };
 
@@ -35,6 +39,7 @@ function Login({ onLogin }) {
           required
         />
         <button type="submit">Entrar</button>
+        {error && <p className="error-message">{error}</p>}
       </form>
     </div>
   );

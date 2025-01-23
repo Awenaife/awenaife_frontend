@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-awenaifefrontend-dev-ad69f-authRole",
+      "UnauthRoleArn": "arn:aws:iam::396913738115:role/amplify-awenaifefrontend-dev-ad69f-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::396913738115:role/amplify-awenaifefrontend-dev-ad69f-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-awenaifefrontend-dev-ad69f-deployment",
+      "UnauthRoleName": "amplify-awenaifefrontend-dev-ad69f-unauthRole",
+      "StackName": "amplify-awenaifefrontend-dev-ad69f",
+      "StackId": "arn:aws:cloudformation:us-east-1:396913738115:stack/amplify-awenaifefrontend-dev-ad69f/6f37c730-d98c-11ef-8f7b-0ea18184ac3f",
+      "AmplifyAppId": "d1m2e9ksqak85f"
+    },
+    "categories": {
+      "auth": {
+        "awenaifefrontend5ca262f1": {}
+      }
+    }
+  }
+}
