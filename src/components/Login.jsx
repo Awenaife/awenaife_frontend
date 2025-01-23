@@ -56,7 +56,7 @@ function Login({ onLogin }) {
       setIsResetPassword(true);
       setError('');
     } catch (err) {
-      console.log('Error requesting password reset:', err.message);
+      console.log('Erro ao requisitar troca de senha:', err.message);
       setError('Erro ao resetar a senha! Tente novamente.');
     }
   };
@@ -69,7 +69,7 @@ function Login({ onLogin }) {
       setError('');
       alert("Senha redefinida com sucesso!");
     } catch (err) {
-      console.log('Error resetting password:', err.message);
+      console.log('Erro ao trocar a senha:', err.message);
       setError('Código inválido ou senha fraca. Tente novamente.');
     }
   };
