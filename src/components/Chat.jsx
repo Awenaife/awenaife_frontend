@@ -13,7 +13,7 @@ function Chat({ onBack }) {
       const botMessage = { text: "Mensagem recebida: " + input, sender: "Bot" };
       setTimeout(() => {
         setMessages((prevMessages) => [...prevMessages, botMessage]);
-      }, 500);
+      }, 100);
     }
   };
 
