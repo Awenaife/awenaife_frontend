@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { signOut, fetchAuthSession } from 'aws-amplify/auth';
+import { signOut } from 'aws-amplify/auth';
 import Login from "./components/Login";
 import Home from "./components/Home";
 import './App.css';
@@ -13,10 +13,8 @@ function App() {
     
     const checkUserSession = async () => {
       try {
-        const session = await fetchAuthSession(); 
         const currentTime = Math.floor(Date.now() / 1000);
-        const expirationTime = session.tokens.accessToken.payload.exp;
-
+        const expirationTime = sessionStorage.getItem("expirationTime");
         if (currentTime > expirationTime) {
           console.log("Sessão expirada. Redirecionando para o login.");
           await signOut();

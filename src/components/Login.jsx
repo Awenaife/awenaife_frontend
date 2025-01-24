@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
-import { signIn, signUp, confirmSignUp, resetPassword, confirmResetPassword } from "aws-amplify/auth";
+import { signIn, signUp, confirmSignUp, resetPassword, confirmResetPassword, fetchAuthSession } from "aws-amplify/auth";
 import './Login.css';
 
 function Login({ onLogin }) {
@@ -18,6 +18,11 @@ function Login({ onLogin }) {
     try {
       await signIn({ username: email, password });
       onLogin();
+      const session = await fetchAuthSession(); 
+      const token = session.tokens.accessToken.toString(0);
+      const expirationTime = session.tokens.accessToken.payload.exp;
+      sessionStorage.setItem("accessToken", token);
+      sessionStorage.setItem("expirationTime", expirationTime);
     } catch (err) {
       console.log('Erro ao entrar:', err.message);
       setError("Credenciais inválidas! Verifique e tente novamente.");

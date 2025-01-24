@@ -7,15 +7,37 @@ function Chat({ onBack }) {
   const [input, setInput] = useState("");
   const messagesEndRef = useRef(null);
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (input.trim()) {
       setMessages([...messages, { text: input, sender: "Você" }]);
       setInput("");
-
-      const botMessage = { text: "Mensagem recebida: " + input, sender: "Bot" };
-      setTimeout(() => {
+      
+      const accessToken = sessionStorage.getItem("accessToken");
+      try {
+        const response = await fetch("https://6874bnnq6a.execute-api.us-east-1.amazonaws.com/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${accessToken}`,
+          },
+          body: JSON.stringify({
+            input: input,
+          }),
+        });
+  
+        if (!response.ok) {
+          throw new Error(`API error: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        const botMessage = { text: data.result, sender: "Bot" };
         setMessages((prevMessages) => [...prevMessages, botMessage]);
-      }, 500);
+        
+      } catch (error) {
+        console.error("Erro ao chamar a API:", error.message);
+        const botMessage = { text: "Erro ao processar sua mensagem. Tente novamente.", sender: "Bot" };
+        setMessages((prevMessages) => [...prevMessages, botMessage]);
+      }
     }
   };
 

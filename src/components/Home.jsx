@@ -11,6 +11,7 @@ function Home({ onLogout }) {
   const handleSignOut = async () => {
     try {
       await signOut();
+      sessionStorage.clear();
       onLogout();
     } catch (err) {
       console.log("Erro ao sair:", err.message);
