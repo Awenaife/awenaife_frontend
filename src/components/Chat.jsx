@@ -1,19 +1,21 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import './Chat.css';
 
 function Chat({ onBack }) {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
+  const messagesEndRef = useRef(null);
 
   const handleSend = () => {
     if (input.trim()) {
       setMessages([...messages, { text: input, sender: "Você" }]);
       setInput("");
+
       const botMessage = { text: "Mensagem recebida: " + input, sender: "Bot" };
       setTimeout(() => {
         setMessages((prevMessages) => [...prevMessages, botMessage]);
-      }, 100);
+      }, 500);
     }
   };
 
@@ -24,6 +26,10 @@ function Chat({ onBack }) {
     }
   };
 
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
   return (
     <div className="chat-container">
       <h2>Chat</h2>
@@ -33,6 +39,7 @@ function Chat({ onBack }) {
             <strong>{message.sender}:</strong> {message.text}
           </div>
         ))}
+        <div ref={messagesEndRef}></div>
       </div>
       <input
         type="text"
