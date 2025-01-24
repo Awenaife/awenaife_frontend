@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getCurrentUser } from 'aws-amplify/auth';
+import { signOut, fetchAuthSession } from 'aws-amplify/auth';
 import Login from "./components/Login";
 import Home from "./components/Home";
 import './App.css';
@@ -8,13 +8,24 @@ import './amplifyConfig';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
-
+  
   useEffect(() => {
+    
     const checkUserSession = async () => {
       try {
-        await getCurrentUser();
-        setIsLoggedIn(true);
-      } catch {
+        const session = await fetchAuthSession(); 
+        const currentTime = Math.floor(Date.now() / 1000);
+        const expirationTime = session.tokens.accessToken.payload.exp;
+
+        if (currentTime > expirationTime) {
+          console.log("Sessão expirada. Redirecionando para o login.");
+          await signOut();
+          setIsLoggedIn(false);
+        } else {
+          setIsLoggedIn(true);
+        }
+      } catch (error) {
+        console.log("Sessão não encontrada. Redirecionando para o login.", error.message);
         setIsLoggedIn(false);
       } finally {
         setLoading(false);
