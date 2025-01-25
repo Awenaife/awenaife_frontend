@@ -24,13 +24,17 @@ function Chat({ onBack }) {
             input: input,
           }),
         });
-  
+
         if (!response.ok) {
           throw new Error(`API error: ${response.status}`);
         }
         
         const data = await response.json();
-        const botMessage = { text: data.result, sender: "Bot" };
+
+        const answer = data.Answer.results[0].outputText;
+
+
+        const botMessage = { text: answer, sender: "Bot" };
         setMessages((prevMessages) => [...prevMessages, botMessage]);
         
       } catch (error) {
