@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useState, useRef, useEffect } from "react";
+import { FiSend, FiUser, FiHeart, FiArrowLeft } from "react-icons/fi";
 import './Chat.css';
 
 function Chat({ onBack }) {
@@ -9,7 +10,7 @@ function Chat({ onBack }) {
 
   const handleSend = async () => {
     if (input.trim()) {
-      setMessages([...messages, { text: input, sender: "Você" }]);
+      setMessages([...messages, { text: input, sender: "user", timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }]);
       setInput("");
       
       const accessToken = sessionStorage.getItem("accessToken");
@@ -34,12 +35,12 @@ function Chat({ onBack }) {
         const answer = data.Answer.results[0].outputText;
 
 
-        const botMessage = { text: answer, sender: "Bot" };
+        const botMessage = { text: answer, sender: "bot", timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) };
         setMessages((prevMessages) => [...prevMessages, botMessage]);
         
       } catch (error) {
         console.error("Erro ao chamar a API:", error.message);
-        const botMessage = { text: "Erro ao processar sua mensagem. Tente novamente.", sender: "Bot" };
+        const botMessage = { text: "Erro ao processar sua mensagem. Tente novamente.", sender: "bot" };
         setMessages((prevMessages) => [...prevMessages, botMessage]);
       }
     }
@@ -59,28 +60,41 @@ function Chat({ onBack }) {
   return (
     <div className="chat-container">
       <h2>Chat</h2>
-      <div className="chat-messages">
+      <div className="chat-window">
         {messages.map((message, index) => (
-          <div key={index} className="chat-message">
-            <strong>{message.sender}:</strong> {message.text}
+          <div 
+            key={index}
+            className={`chat-bubble ${message.sender === "user" ? "user" : "bot"}`}
+          >
+            <div className="icon">
+              {message.sender === "user" ? <FiUser /> : <FiHeart />}
+            </div>
+            <div className="message-content">
+              <p className="message-text">{message.text}</p>
+              <span className="timestamp">{message.timestamp}</span>
+            </div>
           </div>
         ))}
         <div ref={messagesEndRef}></div>
       </div>
-      <input
-        type="text"
-        placeholder="Digite sua mensagem..."
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        onKeyDown={handleKeyDown}
-      />
-      <button onClick={handleSend}>Enviar</button>
-      <button onClick={onBack} style={{ marginTop: "1rem" }}>
-        Voltar
-      </button>
+      <div className="input-container">
+        <input
+          type="text"
+          placeholder="Digite sua mensagem..."
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={handleKeyDown}
+        />
+        <span className="send-icon" onClick={handleSend}>
+          <FiSend size={24} />
+        </span>
+      </div>
+      <span onClick={onBack}>
+        <FiArrowLeft size={24} />
+      </span>
     </div>
   );
-}
+};
 
 Chat.propTypes = {
   onBack: PropTypes.func.isRequired,
