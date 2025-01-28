@@ -37,7 +37,7 @@ function Home({ onLogout }) {
 
   return (
     <div className="main-container">
-      <h2>Bem-vindo à AWENAIFE!</h2>
+      <h2>Bem-vindo à Awenai Aconselhamento Espiritual!</h2>
       <button
         onClick={() => setShowChat(true)}
         style={{

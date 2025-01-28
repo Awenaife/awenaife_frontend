@@ -19,7 +19,7 @@ h2 {
 .chat-messages {
   flex: 1;
   width: 100%;
-  background: #f9f9f9;
+  background: #f9f9f9 url("..\assets\fundo_chat_infinito.png");
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 1rem;
@@ -29,6 +29,9 @@ h2 {
 
 .chat-message {
   margin-bottom: 0.5rem;
+  padding: 10px;
+  border-radius: 10px 10px 0 10px;
+  background-color: #ddd;
 }
 
 input {
@@ -42,7 +45,7 @@ input {
 }
 
 button {
-  background-color: #4a90e2; 
+  background-color: #009fe3; 
   color: white;
   border: none;
   padding: 12px 16px;
@@ -51,12 +54,13 @@ button {
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  width: 100%;
+  width: auto;
   max-width: 350px;
+  display: inline-block;
 }
 
 button:hover {
-  background-color: #357abd;
+  background-color: #e78b00;
 }
 
 button + button {
