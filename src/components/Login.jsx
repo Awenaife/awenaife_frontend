@@ -81,7 +81,7 @@ function Login({ onLogin }) {
 
   return (
     <div className="login-container">
-      <img src="src\assets\awenai_acolhimento_completo.png" alt="Awenai Acolhimento Espiritual" width={180}/>
+      <img src="src\assets\awenai_acolhimento_completo.png" alt="Awenai Acolhimento Espiritual"/>
       <h2>{isSignUp ? "Cadastro" : isResetPassword ? "Troca de senha" : "Login"}</h2>
       <form
         onSubmit={
@@ -150,15 +150,17 @@ function Login({ onLogin }) {
         </button>
       )}
       {!isSignUp && !isResetPassword && (
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            setError('');
-            handleForgotPassword(e);
-          }}
-        >
-          Esqueceu sua senha?
-        </button>
+        <div className="clean">
+          <button 
+            onClick={(e) => {
+              e.preventDefault();
+              setError('');
+              handleForgotPassword(e);
+            }}
+          >
+            Esqueceu sua senha?
+          </button>
+        </div>
       )}
       {error && <p className="error-message">{error}</p>}
     </div>

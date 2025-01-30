@@ -13,6 +13,11 @@
     align-items: center;
   }
   
+  .login-container img {
+    max-width: 180px;
+    margin-bottom: -20px;
+  }
+
   h2 {
     font-size: 1.8rem;
     color: #222; /* Cor mais escura para contraste */
@@ -60,7 +65,16 @@
   button:hover {
     background-color:#e78b00;
   }
-  
+
+  .clean button {
+    background-color: transparent;
+    color: #e78b00;
+  } 
+
+  .clean button:hover {
+    background-color: transparent;
+    color:#a1daf7;
+  }
   /* Mensagem de erro */
   .error-message {
     color: #e74c3c;
