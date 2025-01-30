@@ -81,6 +81,7 @@ function Login({ onLogin }) {
 
   return (
     <div className="login-container">
+      <img src="src\assets\awenai_acolhimento_completo.png" alt="Awenai Acolhimento Espiritual" width={180}/>
       <h2>{isSignUp ? "Cadastro" : isResetPassword ? "Troca de senha" : "Login"}</h2>
       <form
         onSubmit={
