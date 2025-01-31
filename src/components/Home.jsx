@@ -37,7 +37,8 @@ function Home({ onLogout }) {
 
   return (
     <div className="main-container">
-      <h2>Bem-vindo à AWENAIFE!</h2>
+      <img src="src\assets\awenai_acolhimento_completo.png" />
+      <h2>Bem-vindo!</h2>
       <button
         onClick={() => setShowChat(true)}
         style={{
