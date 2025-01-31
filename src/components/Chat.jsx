@@ -58,11 +58,19 @@ function Chat({ onBack }) {
   }, [messages]);
 
   return (
+
     <div className="chat-container">
-      <h2>Chat</h2>
+      <div className="container_topo">
+        <img src="src\assets\awenai_acolhimento_marca.png" />
+      </div>
+      <div className="header_banner">
+        <h2 className="texto_azul">Aconselhamento</h2>
+        <h2 className="texto_laranja">Espiritual</h2>
+      </div>
+      {/*<h2>Chat</h2>*/}
       <div className="chat-window">
         {messages.map((message, index) => (
-          <div 
+          <div
             key={index}
             className={`chat-bubble ${message.sender === "user" ? "user" : "bot"}`}
           >
@@ -83,8 +91,7 @@ function Chat({ onBack }) {
           placeholder="Digite sua mensagem..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          onKeyDown={handleKeyDown}
-        />
+          onKeyDown={handleKeyDown} />
         <span className="send-icon" onClick={handleSend}>
           <FiSend size={24} />
         </span>
