@@ -2,6 +2,8 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { signIn, signUp, confirmSignUp, resetPassword, confirmResetPassword, fetchAuthSession } from "aws-amplify/auth";
 import './Login.css';
+import logoAwenaife from "../assets/awenai_acolhimento_completo.png";
+import logoGoogle from "../assets/logo-google-256.png";
 
 function Login({ onLogin }) {
   const [email, setEmail] = useState("");
@@ -79,9 +81,13 @@ function Login({ onLogin }) {
     }
   };
 
+  const handleClick = () => {
+    alert("Ícone clicado!");
+  };
+
   return (
     <div className="login-container">
-      <img src="src\assets\awenai_acolhimento_completo.png" />
+      <img src={logoAwenaife} />
       <h2>{isSignUp ? "Cadastro" : isResetPassword ? "Troca de senha" : "Login"}</h2>
       <form
         onSubmit={
@@ -149,6 +155,18 @@ function Login({ onLogin }) {
           {isSignUp ? "Já possui uma conta? Entre!" : "Cadastre-se!"}
         </button>
       )}
+      
+      {!isResetPassword && (
+        <div>
+          <a>Ou entre usando sua conta </a>
+          <img
+            src={logoGoogle}
+            alt="Ícone"
+            onClick={handleClick}
+            style={{ cursor: "pointer", width: "50px", height: "20px", padding: "20px 10px 14px 1px" }}/>
+        </div>
+      )}
+
       {!isSignUp && !isResetPassword && (
        <div className="clean">
         <button
