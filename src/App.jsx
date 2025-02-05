@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { signOut } from 'aws-amplify/auth';
 import Login from "./components/Login";
 import Home from "./components/Home";
-import topHeader from "./components/Header";
+import Header from "./components/Header";
 import './App.css';
 import './amplifyConfig';
 
