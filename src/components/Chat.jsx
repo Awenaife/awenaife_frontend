@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useState, useRef, useEffect } from "react";
 import { FiSend, FiUser, FiHeart, FiArrowLeft } from "react-icons/fi";
 import './Chat.css';
-import Header from './Header';
+import topHeader from './Header';
 
 function Chat({ onBack }) {
   const [messages, setMessages] = useState([]);

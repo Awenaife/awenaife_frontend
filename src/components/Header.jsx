@@ -1,4 +1,4 @@
-function Header(_) {
+function topHeader(_) {
 
   return (
     <div className="container">
