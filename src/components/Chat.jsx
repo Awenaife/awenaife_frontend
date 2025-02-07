@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useState, useRef, useEffect } from "react";
 import { FiSend, FiUser, FiHeart, FiArrowLeft } from "react-icons/fi";
 import './Chat.css';
+import Header from './Header';
 
 function Chat({ onBack }) {
   const [messages, setMessages] = useState([]);
@@ -60,23 +61,16 @@ function Chat({ onBack }) {
   return (
 
     <div className="chat-container">
-      <div className="container_topo">
-        <img src="src\assets\awenai_acolhimento_marca.png" />
-      </div>
-      <div className="header_banner">
-        <h2 className="texto_azul">Aconselhamento</h2>
-        <h2 className="texto_laranja">Espiritual</h2>
-      </div>
-      {/*<h2>Chat</h2>*/}
+      <Header />
       <div className="chat-window">
         {messages.map((message, index) => (
           <div
             key={index}
             className={`chat-bubble ${message.sender === "user" ? "user" : "bot"}`}
           >
-            <div className="icon">
+            {/* <div className="icon">
               {message.sender === "user" ? <FiUser /> : <FiHeart />}
-            </div>
+            </div>*/}
             <div className="message-content">
               <p className="message-text">{message.text}</p>
               <span className="timestamp">{message.timestamp}</span>
