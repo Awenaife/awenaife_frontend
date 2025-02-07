@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { signOut, deleteUser } from "aws-amplify/auth";
 import { useState } from "react";
 import Chat from "./Chat";
+import logoAwenaife from "../assets/awenai_acolhimento_completo.png";
 import './Home.css';
 
 function Home({ onLogout }) {
@@ -37,7 +38,7 @@ function Home({ onLogout }) {
 
   return (
     <div className="main-container">
-      <img src="src\assets\awenai_acolhimento_completo.png" />
+      <img src={logoAwenaife} />
       <h2>Bem-vindo!</h2>
       <button
         onClick={() => setShowChat(true)}
