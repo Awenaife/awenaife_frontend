@@ -33,7 +33,7 @@ function Chat({ onBack }) {
         
         const data = await response.json();
 
-        const answer = data.Answer.results[0].outputText;
+        const answer = data.Answer;
 
 
         const botMessage = { text: answer, sender: "bot", timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) };
