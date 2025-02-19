@@ -155,7 +155,7 @@ function Login({ onLogin }) {
           {isSignUp ? "Já possui uma conta? Entre!" : "Cadastre-se!"}
         </button>
       )}
-      
+      {/* 
       {!isResetPassword && (
         <div>
           <a>Ou entre usando sua conta </a>
@@ -166,7 +166,7 @@ function Login({ onLogin }) {
             style={{ cursor: "pointer", width: "50px", height: "20px", padding: "20px 10px 14px 1px" }}/>
         </div>
       )}
-
+      */}
       {!isSignUp && !isResetPassword && (
        <div className="clean">
         <button
