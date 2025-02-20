@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { signOut, deleteUser } from "aws-amplify/auth";
 import { useState } from "react";
 import Chat from "./Chat";
-import logoAwenaife from "../assets/awenai_acolhimento_completo.png";
+import logoAwenaife from "/assets/awenai_acolhimento_completo.png";
 import './Home.css';
 
 function Home({ onLogout }) {

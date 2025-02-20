@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import logoAwenaife from "../assets/awenai_acolhimento_marca.png";
-import logoMobile from "../assets/awenai_ae_completo_branco.png";
+import logoAwenaife from "/assets/awenai_acolhimento_marca.png";
+import logoMobile from "/assets/awenai_ae_completo_branco.png";
 import "./Header.css";
 import Chat from "./Chat"; // Ensure you have this component
 import Message from "./Messages"; // Import your Message component

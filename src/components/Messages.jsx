@@ -1,6 +1,6 @@
 import Header from "./Header";
 import "./Messages.css";
-import imgAvatar from "../assets/video_tik_tok.png";
+import imgAvatar from "/assets/video_tik_tok.png";
 
 function Messages() {
     return (
