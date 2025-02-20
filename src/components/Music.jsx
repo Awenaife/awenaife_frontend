@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import "./Music.css";
 
-const MUSIC_FOLDER = "../assets/music/";
+const MUSIC_FOLDER = "/assets/music/";
 
 const Music = () => {
   const [songs, setSongs] = useState([]);
@@ -24,9 +24,17 @@ const Music = () => {
 
   const playSong = (song) => {
     if (audio) {
+      if (currentSong && currentSong.file === song.file) {
+        // Se a música já estiver tocando, pause e limpe o estado
+        audio.pause();
+        setAudio(null);
+        setCurrentSong(null);
+        return;
+      }
       audio.pause();
     }
-
+  
+    // Criar novo áudio e tocar
     const newAudio = new Audio(`${MUSIC_FOLDER}${song.file}`);
     newAudio.play();
     setAudio(newAudio);

@@ -2,8 +2,8 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { signIn, signUp, confirmSignUp, resetPassword, confirmResetPassword, fetchAuthSession } from "aws-amplify/auth";
 import './Login.css';
-import logoAwenaife from "../assets/awenai_acolhimento_completo.png";
-import logoGoogle from "../assets/logo-google-256.png";
+import logoAwenaife from "/assets/awenai_acolhimento_completo.png";
+import logoGoogle from "/assets/logo-google-256.png";
 
 function Login({ onLogin }) {
   const [email, setEmail] = useState("");

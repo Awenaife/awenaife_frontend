@@ -23,7 +23,7 @@ body {
   padding: 16px;
   overflow-y: auto;
   background-color: #ffffff;
-  background-image: url("..\assets\fundo_chat_infinito.png");
+  background-image: url("/assets/fundo_chat_infinito.png");
   border: 1px solid #a1daf7;
   border-radius: 0 0 10px 10px;
 }
