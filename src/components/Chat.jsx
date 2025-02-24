@@ -13,7 +13,7 @@ function Chat({ onBack }) {
     if (input.trim()) {
       setMessages([...messages, { text: input, sender: "user", timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }]);
       setInput("");
-      
+
       const accessToken = sessionStorage.getItem("accessToken");
       try {
         const response = await fetch("https://6874bnnq6a.execute-api.us-east-1.amazonaws.com/", {
@@ -30,7 +30,7 @@ function Chat({ onBack }) {
         if (!response.ok) {
           throw new Error(`API error: ${response.status}`);
         }
-        
+
         const data = await response.json();
 
         const answer = data.Answer;
@@ -38,7 +38,7 @@ function Chat({ onBack }) {
 
         const botMessage = { text: answer, sender: "bot", timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) };
         setMessages((prevMessages) => [...prevMessages, botMessage]);
-        
+
       } catch (error) {
         console.error("Erro ao chamar a API:", error.message);
         const botMessage = { text: "Erro ao processar sua mensagem. Tente novamente.", sender: "bot" };
@@ -61,8 +61,8 @@ function Chat({ onBack }) {
   return (
 
     <div className="chat-container">
-      <Header />
       <div className="chat-window">
+
         {messages.map((message, index) => (
           <div
             key={index}
