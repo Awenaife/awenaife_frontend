@@ -4,6 +4,8 @@ import { useState } from "react";
 import Chat from "./Chat";
 import logoAwenaife from "/assets/awenai_acolhimento_completo.png";
 import './Home.css';
+import Header from "./Header";
+import Main from "./Main";
 
 function Home({ onLogout }) {
   const [showChat, setShowChat] = useState(false);
@@ -33,7 +35,7 @@ function Home({ onLogout }) {
   };
 
   if (showChat) {
-    return <Chat onBack={() => setShowChat(false)} />;
+    return <Main onBack={() => setShowChat(false)} />;
   }
 
   return (
