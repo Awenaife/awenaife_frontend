@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import logoAwenaife from "/assets/awenai_acolhimento_marca.png";
 import logoMobile from "/assets/awenai_ae_completo_branco.png";
 import "./Header.css";
-import { FiMusic, FiHeart, FiMessageSquare } from "react-icons/fi";
+import { FiBookOpen, FiMoreHorizontal, FiMusic, FiHeart, FiMessageSquare, FiUser } from "react-icons/fi";
 
-function Header({ onMessage, onChat, onMusic }) {
+function Header({ onMessage, onChat, onMusic, onSetup, onWho }) {
   const [isHoveredC, setIsHoveredC] = useState(false);
 
 
@@ -13,12 +13,21 @@ function Header({ onMessage, onChat, onMusic }) {
     <div>
       <div className="header-container">
         <div className="container_topo">
-          <img src={logoAwenaife} alt="Logo" />
+          <img className="web" src={logoAwenaife} alt="Logo"/>  
+          <img className="mobile" src={logoMobile} alt="Logo"/> 
           <div className="menu-header">
+           
+           {/* <button onClick={onWho}>
+              <span className="web">Quem Somos</span>
+              <span className="mobile">
+                <FiUser />
+              </span>
+            </button>
+            */}
             <button onClick={onMessage}>
               <span className="web">Mensagem</span>
               <span className="mobile">
-                <FiHeart />
+                <FiBookOpen />
               </span>
             </button>
             <button
@@ -35,6 +44,12 @@ function Header({ onMessage, onChat, onMusic }) {
               <span className="web">Músicas</span>
               <span className="mobile">
                 <FiMusic />
+              </span>
+            </button>
+            <button onClick={onSetup}>
+              <span className="web">Mais</span>
+              <span className="mobile">
+                <FiMoreHorizontal />
               </span>
             </button>
           </div>

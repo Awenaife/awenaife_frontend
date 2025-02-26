@@ -4,7 +4,7 @@ import { useState } from "react";
 import Chat from "./Chat";
 import logoAwenaife from "/assets/awenai_acolhimento_completo.png";
 import './Home.css';
-import Header from "./Header";
+{/*import Header from "./Header";*/}
 import Main from "./Main";
 
 function Home({ onLogout }) {
@@ -39,7 +39,7 @@ function Home({ onLogout }) {
   }
 
   return (
-    <div className="main-container">
+    <div className="window-container">
       <img src={logoAwenaife} />
       <h2>Bem-vindo!</h2>
       <button

@@ -1,9 +1,10 @@
 .messages-page {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    /*height: 100vh;*/
     width: 100%;
 }
+
 .citacao {
     font-size: 2.5em;
     line-height: 1em;
@@ -16,14 +17,12 @@
     line-height: 1em;
     font-weight: bold;
 }
-.content {
-    display: flex;
+.content-messages {
+   display: flex;
     flex-direction: row;
-    align-self: flex-end;
+    /* align-self: flex-end;*/
     margin-top: 30px;
-}
-.content section {
-    padding: 20px;
+    padding: 30px;
 }
 
 .sermao {
@@ -42,6 +41,47 @@
 .avatar {
     width: 30%;
 }
+
+.avatar img {
+    max-width: 100%;
+}
 .principal {
     width: 70%;
+    padding: 0 30px 0 30px;
+}
+
+@media (max-width: 768px) {
+    .avatar {
+        width: 100%;
+    }
+    
+    .avatar img {
+        max-width: 100%;
+    }
+
+    .principal {
+        width: 100%;
+        padding: 0 10px 0 0px;
+    }
+
+    .content-messages {
+        flex-direction: column-reverse;
+    }
+    .citacao {
+        padding-top: 20px;
+        font-size: 1.7em;
+        line-height: 1em;
+    }
+    .sermao {
+        width: 100%;
+        font-size: 1em;
+        text-align: justify;
+        margin-top: 10px;
+    }
+    .autor {
+        width: 100%;
+        font-size: 1.5em;
+        text-align: right;
+        color: #009fe3;
+    }
 }
