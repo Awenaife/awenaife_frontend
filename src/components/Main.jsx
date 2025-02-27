@@ -3,6 +3,8 @@ import Header from "./Header";
 import Chat from "./Chat";
 import Message from "./Messages";
 import Music from "./Music";
+import Home from "./Home";
+import Who from "./Who";
 import "./Main.css";
 
 function Main() {
@@ -21,17 +23,21 @@ function Main() {
 
 
   return (
-    <div className="chat-container">
+    <div className="main-container">
 
       <Header
         onMessage={() => setActiveComponent("Messages")}
         onChat={() => setActiveComponent("Chat")}
         onMusic={() => setActiveComponent("Music")}
+        onSetup={() => setActiveComponent("Home")}
+        onWho={() => setActiveComponent("Who")}
       /> 
 
       <div className="main-content">
-
-
+        {activeComponent === "Who" &&
+          <Who
+            onBack={handleBack} />
+        }
         {activeComponent === "Chat" &&
           <Chat
             onBack={handleBack} />
@@ -42,6 +48,10 @@ function Main() {
         }
         {activeComponent === "Music" &&
           <Music
+            onBack={handleBack} />
+        }
+        {activeComponent === "Home" &&
+          <Home
             onBack={handleBack} />
         }
       </div>
