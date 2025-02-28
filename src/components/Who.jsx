@@ -14,21 +14,21 @@ function Who({ onBack }) {
                  a fatores como o grande número de fiéis, distância física da igreja ou impossibilidade de comparecer aos cultos.
             </p>
             <h4>Por que o Awenai é Diferente?</h4>
-            <Ul>
+            <ul>
                 <li>
-                <bold>Acessibilidade Ampliada:</bold> Pensando na realidade de muitos cristãos que enfrentam desafios em sua caminhada, 
+                <b>Acessibilidade Ampliada:</b> Pensando na realidade de muitos cristãos que enfrentam desafios em sua caminhada, 
                 o Avenai oferece uma solução prática e sem julgamentos. Seja para um momento de oração, aconselhamento espiritual
                  ou estudo da palavra, a plataforma está sempre disponível para apoiar.
                 </li>
                 <li>
-                <bold>Apoio Complementar à Igreja:</bold> Não substituindo, mas fortalecendo o trabalho das igrejas e congregações, o <bold>Awenai</bold> preenche eventuais
+                <b>Apoio Complementar à Igreja:</b> Não substituindo, mas fortalecendo o trabalho das igrejas e congregações, o <b>Awenai</b> preenche eventuais
                  lacunas e oferece suporte adicional aos líderes religiosos, ajudando a alcançar mais fiéis e oferecer cuidado espiritual contínuo.
                 </li>
         
-            </Ul>
+            </ul>
             <h4>Missão e Propósito</h4>
             <p>
-                O <bold>Awenai Aconselhamento Espiritual</bold> tem como missão aproximar o público evangélico de Deus e de sua comunidade de fé,
+                O <b>Awenai Aconselhamento Espiritual</b> tem como missão aproximar o público evangélico de Deus e de sua comunidade de fé,
                  promovendo bem-estar emocional e espiritual em qualquer momento ou lugar. 
                 Por meio de tecnologia acessível e recursos personalizados, o projeto busca ser um canal de apoio constante,
                  onde cada fiel se sinta ouvido, valorizado e acolhido.
