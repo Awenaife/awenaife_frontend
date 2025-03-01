@@ -8,10 +8,10 @@ import Who from "./Who";
 import "./Main.css";
 
 function Main() {
-  const [activeComponent, setActiveComponent] = useState(null);
+  const [activeComponent, setActiveComponent] = useState("Messages");
 
   const handleBack = () => {
-    setActiveComponent(null); // Reset active component when going back
+    setActiveComponent("Messages"); // Reset active component when going back
   };
 
   useEffect(() => {
@@ -30,7 +30,7 @@ function Main() {
         onChat={() => setActiveComponent("Chat")}
         onMusic={() => setActiveComponent("Music")}
         onSetup={() => setActiveComponent("Home")}
-        onWho={() => setActiveComponent("Who")}
+        
       /> 
 
       <div className="main-content">
@@ -52,7 +52,7 @@ function Main() {
         }
         {activeComponent === "Home" &&
           <Home
-            onBack={handleBack} />
+            onBack={handleBack} onWho={() => setActiveComponent("Who")}/>
         }
       </div>
     </div>

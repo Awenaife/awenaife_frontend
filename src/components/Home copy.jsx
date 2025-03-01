@@ -8,7 +8,7 @@ import Main from "./Main";
 import Who from "./Who";
 
 
-function Home({ onLogout, onWho }) {
+function Home({ onLogout }) {
   const [showChat, setShowChat] = useState(false);
   const [isHoveredC, setIsHoveredC] = useState(false);
   const [isHoveredE, setIsHoveredE] = useState(false);
@@ -35,16 +35,14 @@ function Home({ onLogout, onWho }) {
     }
   };
 
-  if (showChat) {
-    return <Main onBack={() => setShowChat(false)} />;
-  }
+
 
   return (
     <div className="window-container">
       <img src={logoAwenaife} />
       <h2>Bem-vindo!</h2>
       <button
-        onClick={onWho}
+        onClick={() => setShowChat(true)}
         style={{
           backgroundColor: isHoveredC ? "#218838" : "#28a745",
           marginTop: "1rem",
@@ -69,9 +67,10 @@ function Home({ onLogout, onWho }) {
     </div>
   );
 }
-/*
-Home.propTypes = {
+
+/*Home.propTypes = {
   onLogout: PropTypes.func.isRequired,
 };
 */
+
 export default Home;

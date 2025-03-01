@@ -3,7 +3,6 @@ import { signOut } from 'aws-amplify/auth';
 import Login from "./components/Login";
 import Home from "./components/Home";
 import Main from './components/Main';
-import Header from "./components/Header";
 import './App.css';
 import './amplifyConfig';
 
@@ -40,7 +39,8 @@ function App() {
   return (
     <div>
       {isLoggedIn ? (
-        <Home onLogout={() => setIsLoggedIn(false)} />
+        //<Home onLogout={() => setIsLoggedIn(false)} />
+        <Main />
       ) : (
         <Login onLogin={() => setIsLoggedIn(true)} />
       )}
