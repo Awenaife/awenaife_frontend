@@ -3,9 +3,8 @@ import { signOut, deleteUser } from "aws-amplify/auth";
 import { useState } from "react";
 import logoAwenaife from "/assets/awenai_acolhimento_completo.png";
 import './Home.css';
-{/*import Header from "./Header";*/}
 import Main from "./Main";
-import Who from "./Who";
+
 
 
 function Home({ onLogout, onWho }) {
@@ -69,9 +68,9 @@ function Home({ onLogout, onWho }) {
     </div>
   );
 }
-/*
+
 Home.propTypes = {
   onLogout: PropTypes.func.isRequired,
 };
-*/
+
 export default Home;

@@ -7,7 +7,7 @@ import Home from "./Home";
 import Who from "./Who";
 import "./Main.css";
 
-function Main() {
+function Main({onLogout}) {
   const [activeComponent, setActiveComponent] = useState("Messages");
 
   const handleBack = () => {
@@ -52,7 +52,7 @@ function Main() {
         }
         {activeComponent === "Home" &&
           <Home
-            onBack={handleBack} onWho={() => setActiveComponent("Who")}/>
+            onBack={handleBack} onWho={() => setActiveComponent("Who")} onLogout={onLogout}/>
         }
       </div>
     </div>

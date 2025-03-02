@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { signOut } from 'aws-amplify/auth';
 import Login from "./components/Login";
-import Home from "./components/Home";
 import Main from './components/Main';
 import './App.css';
 import './amplifyConfig';
@@ -40,7 +39,7 @@ function App() {
     <div>
       {isLoggedIn ? (
         //<Home onLogout={() => setIsLoggedIn(false)} />
-        <Main />
+        <Main onLogout={() => setIsLoggedIn(false)} />
       ) : (
         <Login onLogin={() => setIsLoggedIn(true)} />
       )}
